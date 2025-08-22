@@ -3,6 +3,7 @@ body{
 	background-color:#E0777D;
 	color: #4C86A8;
 	font-family: "Rokkitt", serif;
+	text-align: center;
 	
 }
 
@@ -14,6 +15,9 @@ h2{
 	font-size: 3rem;
 }
 
-p{
-	
+a{
+	text-decoration: none;
+	font-family:"Rokkitt", serif ;
+	font-size: 1rem;
+	color: #8E3B46;
 }
