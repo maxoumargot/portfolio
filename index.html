@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Maxime Margot</title>
-	<link rel="stylesheet" href="style.css">
+	<link  rel="stylesheet" href="https://id441.glitch.me/webring.css">
+	<link  rel="stylesheet" href="style.css">
+	<title>Maxou</title>
 </head>
 <body>
-	<h1>hello</h1>
-	<h2>the best interractive media designer in the world</h2>
+	<div id="custom-cursor"></div>
+	<h1 style="text-align: end;" >Maxime Margot</h1>
+	<h4 style="text-align: center;">Maxime Margot</h4>
+	<p style="text-align: center;">Interactive Media Designer</p>
+
+	<h3 style="text-align: center;"> <a href="https://maximemargot.ch">click here to saw my job in my website</a></h3>
 </body>
+<script>
+    const cursor = document.getElementById("custom-cursor");
+    const root = document.documentElement;
+
+    // Suivre le mouvement de la souris
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+
+    // Inverser les couleurs au clic
+document.addEventListener("click", () => {
+    const currentBgColor = getComputedStyle(root).getPropertyValue("--bg-color").trim();
+    const currentTextColor = getComputedStyle(root).getPropertyValue("--text-color").trim();
+
+    root.style.setProperty("--bg-color", currentTextColor);
+    root.style.setProperty("--text-color", currentBgColor);
+});
+
+    // Effet de clic pour le curseur
+    document.addEventListener("mousedown", () => {
+        cursor.style.transform = "scale(0.8)";
+    });
+
+    document.addEventListener("mouseup", () => {
+        cursor.style.transform = "scale(1)";
+    });
+    
+</script>
 </html>
