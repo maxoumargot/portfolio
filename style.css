@@ -13,5 +13,10 @@ body{
 }
 
 h1{
-	font-size: 10vh;
+	font-size: 15vw;
+}
+
+h2{
+	max-width: 20ch;
+	text-align: center;
 }
