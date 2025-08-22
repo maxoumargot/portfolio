@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+	background-color:#E0777D;
+	color: #4C86A8;
+	font-family: "Rokkitt", serif;
+	
+}
+
+h1{
+	font-size: 10rem;
+}
+
+h2{
+	font-size: 3rem;
+}
+
+p{
+	
+}
