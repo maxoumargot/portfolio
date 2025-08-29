@@ -1,0 +1,8 @@
+img, video {max-width: 100%;}
+
+.row{
+	display: flex;
+	gap: 1rem;
+}
+
+.row > * {flex: 1;}
