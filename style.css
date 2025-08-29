@@ -10,11 +10,44 @@
 
 
 /* - - COULEUR - - - -  */
+body{
+	background-color: blue;
+}
+
+a{
+	color: white;
+}
 
 
 
 /* - - MISE EN PAGE - - */
+header{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+section{
+	border-top: 1px solid white;
+	min-height: 100vh;
+}
 
 
 
 /* - - MODULES - - - -  */
+nav{
+	background-color: #0003;
+
+	display: flex;
+	width: 100%;
+}
+
+nav a {
+	padding: 1rem;
+}
+
+nav a:hover{
+	background-color: #0006;
+}
