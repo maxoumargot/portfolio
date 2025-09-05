@@ -1,100 +1,68 @@
-/* - - IMPORT - - - - - */
-@import url(reset.css);
-@import url(utility.css);
+/* Police sobre et moderne */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-
-
-/* - - TYPOGRAPHIE - -  */
-@import url();
-
-
-
-/* - - COULEUR - - - -  */
-body{
-	background-color: blue;
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
-
-
-
-/* - - UI/UX - - - - - -*/
-html{
-	scroll-behavior: smooth;
-}
-/* *:has(.topNav){position: relative;} */
-a.topNav{
-	font-size: 1rem;
-	position: absolute;
-	right: 2rem;
-
-}
-
+/* Navigation ultra clean */
 nav {
-	position: sticky;
-	top: 0;
-	z-index: 99;
- }
-
-
-
-/* - - MISE EN PAGE - - */
-
-header .hero{
-	height: calc(100vh - 3rem);
-}
-
-nav {
-	height: 3rem;
-	justify-content: center;
-	
-}
-
-section{
-	border-top: 1px solid white;
-	min-height: 100vh;
-}
-
-
-
-/* - - MODULES - - - -  */
-nav{
-	background-color: #0004;
-	display: flex;
-	width: 100%;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap:1rem;
+  background: none;
+  border:1px, #000;
 }
 
 nav a {
-	padding: 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-nav a:hover{
-	background-color: #0006;
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* - - .hero - - */
-
-.hero{
-	position: relative;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+/* Sections pleine hauteur avec beaucoup d'air */
+section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.hero .image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.hero .image img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+/* Typographie dominante */
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
 }
 
-.hero .texte {
-	background-color: #0004;
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+p {
+  max-width: 700px;
+  margin: 0 0 2rem 0;
+}
+
+/* Images simples, sans effet */
+img {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  display: block;
 }
