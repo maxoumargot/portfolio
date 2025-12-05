@@ -1,13 +1,27 @@
 /* Police sobre et moderne */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("ScienceGothic.ttf") format("truetype");
+  font-weight: 100 900; /* Plage de poids */
+  font-stretch: 50% 200%; /* Plage de largeur */
+  font-style: normal;
+  font-variation-settings: "wght" 400, "wdth" 122,  1, "slnt" 0;
+}
+
+
 body {
-  font-family: 'Inter', sans-serif;
   margin: 0;
   background: #fff;
   color: #000;
   font-size: 1.1rem;
   line-height: 1.5;
+  font-family: "ScienceGothic", sans-serif;
+  font-size: 50px;
+  line-height: 1.15;
+  font-variation-settings: "wght"300, "wdth" 120, "CTRS" 1 , "slnt" 12;
+  background-color: #f6e6d1;
 }
 
 /* Navigation ultra clean */

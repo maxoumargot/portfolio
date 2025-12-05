@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Lettre Gravité</title>
+<style>
+  body { margin:0; background:#111; overflow:hidden; display:flex; justify-content:center; align-items:center; height:100vh; }
+  #container { position:relative; width:100vw; height:100vh; background:#222; }
+  svg text { position:absolute; display:block; font-family:Arial; font-size:120px; fill:#eee; user-select:none; }
+  button { position:absolute; top:20px; left:20px; padding:10px 20px; font-size:16px; cursor:pointer; }
+</style>
+</head>
+<body>
+
+<div id="container"></div>
+<button id="regenBtn">Relancer le texte</button>
+
+<script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+<script>
+(function(){
+  const Engine = Matter.Engine,
+        World = Matter.World,
+        Bodies = Matter.Bodies;
+
+  const engine = Engine.create();
+  engine.gravity.y = 1;
+
+  const container = document.getElementById('container');
+  const lettersBodies = [];
+
+  const ground = Bodies.rectangle(window.innerWidth/2, window.innerHeight+20, window.innerWidth, 40, { isStatic:true });
+  World.add(engine.world, ground);
+
+  // Texte à afficher
+  const title = "Moles";
+
+  function clearAll() {
+    lettersBodies.forEach(obj=>{
+      World.remove(engine.world, obj.body);
+      container.removeChild(obj.svg);
+    });
+    lettersBodies.length = 0;
+  }
+
+  function generateLetters(text) {
+    clearAll();
+    let offsetX = 50;
+
+    text.split('').forEach(ch => {
+      const txtEl = document.createElementNS("http://www.w3.org/2000/svg",'text');
+      txtEl.textContent = ch;
+      txtEl.style.left = offsetX + 'px';
+      txtEl.style.top = '-150px';
+      container.appendChild(txtEl);
+
+      const body = Bodies.rectangle(offsetX + 40, -60, 80, 120, {
+        restitution:0.3,
+        friction:0.4
+      });
+      World.add(engine.world, body);
+
+      lettersBodies.push({svg: txtEl, body: body});
+
+      offsetX += 100;
+    });
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    lettersBodies.forEach(obj => {
+      const b = obj.body;
+      obj.svg.style.transform = `translate(${b.position.x-40}px, ${b.position.y-60}px) rotate(${b.angle}rad)`;
+    });
+  }
+
+  // Relancer le texte avec un bouton
+  document.getElementById('regenBtn').addEventListener('click', ()=>{
+    generateLetters(title);
+  });
+
+  // Générer au chargement
+  generateLetters(title);
+  animate();
+})();
+</script>
+</body>
+</html>
